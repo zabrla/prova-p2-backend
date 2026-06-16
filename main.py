@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from pydantic import BaseModel, Field
 
-database_url = os.getenv("database_url", "postgresql://postgres:postgres@localhost:5432/ecommerce")
+database_url = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/ecommerce")
 engine = create_engine(database_url)
 sessionlocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 base = declarative_base()
